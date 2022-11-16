@@ -6,22 +6,12 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  background: linear-gradient(45deg, rgb(150, 19, 19), rgb(150, 50, 50), rgb(244, 186, 78));
+  background: linear-gradient(45deg, rgb(150, 19, 19), rgb(150, 50, 50), rgb(230, 120, 50));
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   height: 100%;
   color: white;  
-}
-
-.textbook-code {
-  margin: 2rem;
-}
-
-.subtitle {
-  color: gray;
-  font-size: 0.8rem;
-  margin-left: 20px;
 }
 
 .App-header {
@@ -35,19 +25,6 @@ body {
   color: white;
 }
 
-code {
-  display: block;
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-  background: rgba(255, 255, 240, .60);
-  padding: 3px 6px;
-  border: 2px solid black;
-  border-radius: 3px;
-  color: navy;
-  margin: 3px;
-  width: fit-content;
-}
-
 a {
   text-decoration: underline;
   font-family: comic, sans-serif; 
@@ -59,4 +36,17 @@ hr {
 
 .webpagelink {
   margin-left: 8px;
+}
+
+input#search {
+  padding: 3px;
+  color: black;
+}
+
+span {
+  padding: 0 4px;
+}
+
+* {
+  text-indent: 10px each-line;
 }

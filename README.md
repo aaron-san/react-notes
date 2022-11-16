@@ -1,3 +1,14 @@
+`npm install react-router-dom --save`
+`npm install @types/react-router-dom --save`
+
+`npm install react-router-dom@latest`
+
+# 👇️ only if you use TypeScript
+
+`npm install --save-dev @types/react-router-dom@latest`
+
+`npm install gh-pages`
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
