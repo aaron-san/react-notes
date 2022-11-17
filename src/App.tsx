@@ -2,10 +2,8 @@ import React, { useState } from "react";
 import "./App.css";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import styled from "styled-components";
-import Notes from "./components/Notes";
+// import Notes from "./components/Notes";
 import Home from "./pages/Home";
-// import Search from "./components/Search";
-// import { JsxElement } from "typescript";
 
 export const App = () => {
   return (
