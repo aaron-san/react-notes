@@ -2,26 +2,95 @@
 @tailwind components;
 @tailwind utilities;
 
+#root {
+  /* min-height: 1000px; */
+  --primary-highlight: dodgerblue;
+  --secondary-highlight: gray;
+  --tertiary-highlight: rgb(255, 127, 187);
+  --light: whitesmoke;
+  /* overflow: hidden; */
+}
+
+@font-face {
+  font-family: "Roboto-Regular";
+  src: local("Roboto-Regular"),
+    url("./fonts/Roboto/Roboto-Regular.ttf") format("truetype");
+}
+* {
+  margin: 0;
+  /* box-sizing: border-box; // not neccesary */
+  font-family: "Roboto-Regular";
+  /* line-height: 1.8rem; */
+  font-size: 1.2rem;
+}
+
+@font-face {
+  font-family: "FingerPaint";
+  src: local("FingerPaint"),
+    url("./fonts/Finger_Paint/FingerPaint-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "PermanentMarker";
+  src: local("PermanentMarker"),
+    url("./fonts/Permanent_Marker/PermanentMarker-Regular.ttf")
+      format("truetype");
+}
+@font-face {
+  font-family: "Flamenco";
+  src: local("Flamenco"),
+    url("./fonts/Flamenco/Flamenco-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Atma-Medium";
+  src: local("Atma-Medium"),
+    url("./fonts/Atma/Atma-Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "HiMelody-Regular";
+  src: local("HiMelody-Regular"),
+    url("./fonts/Hi_Melody/HiMelody-Regular.ttf") format("truetype");
+}
+
+.header {
+  font-family: "HiMelody-Regular";
+}
+
 li {
-    list-style-type: square;
-    margin-left: 30px;
+  list-style-type: square;
+  /* margin-left: 30px; */
+  font-size: 16px;
 }
 
-p {
-    text-indent: 15px;
-    font-weight: lighter;
-    letter-spacing: 0.2px;
-    font-size: 22px;
+/* h1 {
+  /* font-family: "FingerPaint"; */
+/* color: var(--primary-highlight); */
+/* font-size: 1.6rem; */
 
+h2 {
+  font-family: "HiMelody-Regular";
+  /* font-size: 1.4rem; */
+  margin-bottom: 2px;
+  /* color: var(--secondary-highlight); */
 }
+
+/* h3 {
+  font-size: 1.3rem;
+  margin-bottom: 2px;
+  color: var(--light);
+} */
 
 @layer components {
-    p {
-        @apply mb-8 text-justify text-stone-100
-    }
-    
-    code {
-      @apply w-[60%] bg-stone-800 block p-3 m-3 border border-white rounded-md text-white whitespace-nowrap
-    }
-    
+  p {
+    @apply mb-8 md:text-justify tracking-tighter font-light;
   }
+
+  h1 {
+    @apply self-start;
+  }
+
+  code {
+    @apply w-[95%] md:w-[90%] bg-stone-800 block p-3 m-3 border border-white rounded-md text-white whitespace-nowrap overflow-auto;
+  }
+}

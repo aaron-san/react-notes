@@ -1,33 +1,48 @@
+:root {
+  --main-bg-color: linear-gradient(45deg, lightgray, lightgray whitesmoke);
+  /* height: 100%; */
+}
+
+* {
+  text-indent: 10px each-line;
+  scrollbar-width: none;
+  -ms-overflow-style: none; /* Firefox */
+}
+
 body {
-  font-size: 1.2rem;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-size: 1.8rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  background: linear-gradient(45deg, rgb(150, 19, 19), rgb(150, 50, 50), rgb(230, 120, 50));
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  height: 100%;
-  color: white;  
+  /* background: var(--main-bg-color); */
+  /* background-repeat: no-repeat; */
+  /* background-position: center; */
+  /* background-size: cover; */
+  /* height: 100%; */
+  color: #333;
+}
+
+p {
+  text-indent: 20px;
 }
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  /* min-height: 100vh; */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: #333;
 }
 
 a {
   text-decoration: underline;
-  font-family: comic, sans-serif; 
+  font-family: comic, sans-serif;
 }
 
 hr {
@@ -35,7 +50,7 @@ hr {
 }
 
 .webpagelink {
-  margin-left: 8px;
+  margin-left: 4px;
 }
 
 input#search {
@@ -47,6 +62,139 @@ span {
   padding: 0 4px;
 }
 
-* {
-  text-indent: 10px each-line;
+/* Navbar container */
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  font-family: Arial;
+}
+
+/* Links inside the navbar */
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: #333;
+  text-align: center;
+  /* padding: 14px 1px; */
+  text-decoration: none;
+}
+
+/* The dropdown container */
+/* .dropdown */
+/* -- .dropdown-button */
+/* -- .dropdown-links  .dropdown-show .dropdown-hide */
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+/* Dropdown button */
+.dropdown .dropdown-button {
+  font-size: 28px;
+  /* border-left: 2px solid rgb(230, 230, 230); */
+  /* border-right: 2px solid rgb(230, 230, 230); */
+  outline: none;
+  color: #333;
+  padding: 5px 0px;
+  background-color: inherit;
+  font-family: inherit; /* Important for vertical align on mobile phones */
+  margin: 0; /* Important for vertical align on mobile phones */
+  /* margin-top: 14px; */
+  /* border-radius: 10px 10px 3px 3px; */
+  /* transition: 1000ms; */
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-links {
+  /* display: none; */
+  position: absolute;
+  /* top: 60px; */
+  /* border-left: 2px solid #5b4f4f; */
+  /* border-radius: 0 0 0 5px; */
+  top: 0;
+  right: 0;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  /* transition: 1s; */
+  min-height: 100vh;
+}
+
+/* Links inside the dropdown */
+.dropdown-links a {
+  padding: 12px 16px;
+  text-align: left;
+}
+
+/* Add a grey background color to dropdown links on hover */
+.dropdown-links a:hover {
+  background-color: rgb(108, 123, 85);
+}
+
+.dropdown-show {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  background-color: darkslategray;
+  color: ghostwhite;
+  border: 1px solid black;
+  animation-name: appear;
+  animation-duration: 0.6s;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+
+.dropdown-hide {
+  display: none;
+}
+
+/* Show the dropdown menu on hover */
+/* .dropdown:hover .dropdown-links {
+  /* display: block; */
+/* height: 300px; */
+/* color: #333; */
+/* transition: 1000ms; */
+/* } */
+
+#close-button {
+  text-align: right;
+  margin: 20px 32px 12px 0;
+  color: ghostwhite;
+  font-size: 0.75rem;
+}
+
+.item {
+  /* Tailwind: flex items-center pb-[5px] */
+  display: flex;
+  align-items: center;
+  padding-bottom: 5px;
+}
+
+.item > span > a {
+  /* Tailwind: text-inherit */
+  color: inherit;
+}
+
+.note:has(.warning) {
+  background-color: lightpink;
+  color: #5b4f4f;
+  margin: 1rem 0;
+  padding: 0.5rem 1rem;
+  border: 1px solid red;
+  border-radius: 5px;
+  text-align: left;
+}
+
+.warning {
+  font-size: 1.2rem;
+  color: red;
 }

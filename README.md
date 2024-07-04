@@ -3,38 +3,75 @@
 - Select react
 - Select typescript
 
-`npm install`
-`npm run dev`
+# Workflow
 
-**_Deploy to Github Pages_**
+## Start server
 
-`npm run deploy`
+```shell
+npm run dev
+```
+
+## Deploy to Github Pages
+
+```shell
+# npm run build
+npm run predeploy
+git add dist -f
+git commit -m"adding dist"
+git subtree push --prefix dist origin gh-pages
+```
+
+## Set up Testing
+
+Jest is not compatible out-of-the-box in TypeScript or Vite, so must install:
+
+```shell
+npm i -D vitest 
+npm i -D jsdom 
+npm i -D @testing-library/react 
+npm i -D @testing-library/jest-dom
+
+```
+
+Enable HTML in Vitest with jsdom
+
+Add script in package.json:
+"test": "vitest"
+
+Need to wrap components in tests in the <BrowserRouter></BrowserRouter> tags for them to run.
+
+For example:
+```js
+<BrowserRouter>
+    render(<Item item={storyOne} />);
+screen.debug();
+</BrowserRouter>
+```
+
 
 ---
 
-`npm install react-router-dom --save`
-`npm install @types/react-router-dom --save`
-`npm install react-router-dom@latest`
+```shell
+npm install --save-dev jest
+npm install --save-dev @babel/preset-env @babel/preset-react
+npm install --save-dev @testing-library/react @testing-library/jest-dom @testing-library/user-event
+npm install ts-jest @types/jest --save-dev
+npm install ts-node @types/testing-library/jest-dom --save-dev
+npm install jest-environment-jsdom
+npm install identity-obj-proxy --save-dev
 
-# 👇️ only if you use TypeScript
+npm uninstall jest @babel/preset-env @babel/preset-react @testing-library/react @testing-library/jest-dom @testing-library/user-event ts-jest @types/jest ts-node @types/testing-library/jest-dom jest-environment-jsdom identity-obj-proxy
+```
 
-`npm install --save-dev @types/react-router-dom@latest`
+**Notes**
+Babel presets for environment and React are essential for transpiling JavaScript and JSX code, ensuring compatibility across different environments.
 
-`npm install gh-pages`
+@testing-library/react provides utilities for testing React components, while @testing-library/jest-dom adds custom Jest matchers for asserting on DOM elements.
 
-# Getting Started with Create React App
+ts-jest is a TypeScript preprocessor for Jest, enabling the testing of TypeScript code. @types/jest provides TypeScript type definitions for Jest.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+ts-node is required for running TypeScript files directly in Node.js. @types/testing-library/jest-dom provides TypeScript type definitions for Jest DOM.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+jest-environment-jsdom is a Jest environment for running tests in a simulated DOM environment. It ensures that your React components can be tested in a realistic browser-like environment.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+identity-obj-proxy is a simple utility for creating identity-based proxies. In the context of Jest, it is often used to mock CSS modules.
