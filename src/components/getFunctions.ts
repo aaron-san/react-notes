@@ -8,6 +8,8 @@ export const initialStories: IStory[] = [
     num_comments: 3,
     points: 4,
     objectID: 0,
+    list: "",
+    page: 0,
   },
   {
     title: "Redux",
@@ -16,6 +18,8 @@ export const initialStories: IStory[] = [
     num_comments: 2,
     points: 5,
     objectID: 1,
+    list: "",
+    page: 0,
   },
 ];
 

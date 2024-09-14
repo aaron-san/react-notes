@@ -47,15 +47,15 @@
     url("./fonts/Atma/Atma-Light.ttf") format("truetype");
 }
 
-@font-face {
+/* @font-face {
   font-family: "HiMelody-Regular";
   src: local("HiMelody-Regular"),
     url("./fonts/Hi_Melody/HiMelody-Regular.ttf") format("truetype");
-}
+} */
 
-.header {
+/* .header {
   font-family: "HiMelody-Regular";
-}
+} */
 
 li {
   list-style-type: square;
@@ -69,7 +69,7 @@ li {
 /* font-size: 1.6rem; */
 
 h2 {
-  font-family: "HiMelody-Regular";
+  /* font-family: "HiMelody-Regular"; */
   /* font-size: 1.4rem; */
   margin-bottom: 2px;
   /* color: var(--secondary-highlight); */

@@ -1,34 +1,27 @@
-`npm create vite@latest . --template react`
-
-- Select react
-- Select typescript
-
-# Workflow
-
-## Start server
-
-```shell
-npm run dev
-```
-
 ## Deploy to Github Pages
 
 ```shell
-# npm run build
 npm run predeploy
 git add dist -f
-git commit -m"adding dist"
+git commit -m "adding dist"
 git subtree push --prefix dist origin gh-pages
 ```
+
+# Console output after running 'npm run predeploy':
+
+> ```
+>    Some chunks are larger than 500 kB after minification. Consider:
+>       - Using dynamic import() to code-split the application
+> ```
 
 ## Set up Testing
 
 Jest is not compatible out-of-the-box in TypeScript or Vite, so must install:
 
 ```shell
-npm i -D vitest 
-npm i -D jsdom 
-npm i -D @testing-library/react 
+npm i -D vitest
+npm i -D jsdom
+npm i -D @testing-library/react
 npm i -D @testing-library/jest-dom
 
 ```
@@ -41,13 +34,14 @@ Add script in package.json:
 Need to wrap components in tests in the <BrowserRouter></BrowserRouter> tags for them to run.
 
 For example:
+
 ```js
 <BrowserRouter>
-    render(<Item item={storyOne} />);
-screen.debug();
+  render(
+  <Item item={storyOne} />
+  ); screen.debug();
 </BrowserRouter>
 ```
-
 
 ---
 

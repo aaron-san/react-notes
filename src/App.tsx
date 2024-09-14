@@ -12,6 +12,7 @@ import { NotFound } from "./pages/NotFound";
 import NodeNotes from "./pages/NodeNotes";
 
 import { CodeExamples } from "./pages/CodeExamples";
+import CampingNotes from "./pages/CampingNotes";
 
 export const App = () => {
   return (
@@ -22,6 +23,7 @@ export const App = () => {
         <Route path="/react-notes/about" element={<About />} />
         <Route path="/react-notes/node-notes" element={<NodeNotes />} />
         <Route path="/react-notes/code-examples" element={<CodeExamples />} />
+        <Route path="/react-notes/code-examples" element={<CampingNotes />} />
         {/* <Route exact path="/contact" element={<Contact />} /> */}
         <Route path="*" element={<NotFound />} />
       </Routes>
